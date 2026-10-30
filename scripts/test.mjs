@@ -69,6 +69,11 @@ const frText = htmls.fr.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>
 ok(!/\b(Request|Computer science|Copy address|Send an email)\b/.test(frText), 'aucun anglais résiduel dans la version française');
 ok(/jacopo\.devprojects@gmail\.com/.test(htmls.en) && /20,600/.test(htmls.en) && /1,500/.test(htmls.en) && /8&nbsp;GB/.test(htmls.en) && /i5-1135G7/.test(htmls.en) && /F515EA/.test(htmls.en), 'informations clés conservées (e-mail, chiffres ATLAS, machine)');
 
+const oldEn = ['year 2', 'single 8', 'partial PC build', 'model development', 'good conditions', 'class="eyebrow">Work<', 'Control core'];
+ok(!oldEn.some((t) => htmls.en.includes(t)), 'formulations anglaises corrigées : aucune ancienne tournure');
+ok(/Second-year Computer Science student/.test(htmls.en) && /on an 8&nbsp;GB laptop/.test(htmls.en) && /used desktop PC or individual components/.test(htmls.en) && /Running and experimenting with local AI models/.test(htmls.en), 'nouvelles formulations anglaises présentes');
+ok(!/développer des modèles/.test(htmls.fr), 'FR : ne suggère pas de développer des modèles');
+
 console.log('\n== Sitemap / robots');
 const sm = readFileSync(join(dist, 'sitemap.xml'), 'utf8');
 ok(sm.includes(`<loc>${base}/</loc>`) && sm.includes(`<loc>${base}/en/</loc>`) && sm.includes('hreflang="en"'), 'sitemap FR + EN avec hreflang');
