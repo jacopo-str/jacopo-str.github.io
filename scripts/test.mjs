@@ -38,7 +38,8 @@ for (const [lg, pg] of Object.entries(pages)) {
   ok(!/<h[23][^>]*>[^<]*<\/h[23]>\s*<\/(section|article)>/.test(html), 'aucun titre sans contenu');
   ok([...html.matchAll(/<img [^>]*>/g)].every((m) => /width="\d+"/.test(m[0]) && /height="\d+"/.test(m[0]) && /alt="[^"]{10,}"/.test(m[0])), 'images : dimensions et alt descriptif');
   ok([...html.matchAll(/<section[^>]*id="([^"]+)"/g)].every((m) => new RegExp('href="#' + m[1] + '"').test(html)), 'chaque section est atteignable par un lien');
-  ok(!/https?:\/\/(?!(?:www\.)?w3\.org|schema\.org|jacopo-str\.github\.io|github\.com\/jacopo-str)/.test(html.replace(/<svg[\s\S]*?<\/svg>/g, '')), 'aucune ressource externe tierce');
+  ok(!/https?:\/\/(?!(?:www\.)?w3\.org|schema\.org|jacopo-str\.github\.io|github\.com\/jacopo-str|static\.cloudflareinsights\.com\/beacon\.min\.js)/.test(html.replace(/<svg[\s\S]*?<\/svg>/g, '')), 'aucune ressource externe tierce (hors balise Cloudflare Web Analytics)');
+  ok((html.match(/static\.cloudflareinsights\.com\/beacon\.min\.js/g) || []).length === 1 && /<script[^>]*beacon\.min\.js[^>]*><\/script>\s*<!-- End Cloudflare Web Analytics -->\s*<\/body>/.test(html), 'Cloudflare Web Analytics : une seule balise, juste avant </body>');
   ok([...html.matchAll(/<a [^>]*target="_blank"[^>]*>/g)].every((m) => /rel="[^"]*noopener/.test(m[0])), 'liens externes avec noopener');
   ok(/<ul class="lang"[^>]*aria-label=/.test(html) && html.includes('aria-current="true"'), 'sélecteur de langue accessible (aria-label, aria-current)');
 }
