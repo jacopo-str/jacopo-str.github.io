@@ -33,15 +33,18 @@
         status.textContent = copyBtn.textContent;
         setTimeout(function () { copyBtn.textContent = label; }, 2500);
       }
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(addr).then(function () { done(true); }, function () { done(false); });
-      } else {
+      function legacy() {
         var t = document.createElement('textarea');
-        t.value = addr; t.style.position = 'fixed'; t.style.opacity = '0';
+        t.value = addr; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
         document.body.appendChild(t); t.select();
         var ok = false;
         try { ok = document.execCommand('copy'); } catch (e) {}
         document.body.removeChild(t); done(ok);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(addr).then(function () { done(true); }, legacy);
+      } else {
+        legacy();
       }
     });
   }
