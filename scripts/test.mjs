@@ -13,7 +13,7 @@ const ok = (c, m) => { console.log((c ? '✔ ' : '✘ ') + m); if (!c) fails++; 
 const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]));
 const anchors = [...html.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]);
 ok(anchors.every((a) => ids.has(a)), `${anchors.length} ancres internes résolues`);
-const locals = [...html.matchAll(/(?:href|src)="([^"#:]+)"/g)].map((m) => m[1]);
+const locals = [...html.matchAll(/(?:href|src)="([^"#:]+)"/g)].map((m) => m[1].split('?')[0]);
 ok(locals.every((f) => existsSync(join(dist, f))), `${locals.length} fichiers locaux présents (${[...new Set(locals)].join(', ')})`);
 ok(/<html lang="fr">/.test(html), 'lang="fr"');
 ok((html.match(/<h1[ >]/g) || []).length === 1, 'un seul <h1>');

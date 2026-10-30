@@ -1,6 +1,7 @@
 // Génère dist/ à partir de src/ et site.config.json. Aucune dépendance.
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -20,6 +21,11 @@ html = html.replace(/\{\{(\w+)\}\}/g, (_, k) => {
   if (!(k in cfg)) throw new Error(`Variable de configuration inconnue : ${k}`);
   return esc(cfg[k]);
 });
+// Versionne CSS/JS par empreinte du contenu : un changement est visible immédiatement malgré le cache.
+for (const f of ['style.css', 'main.js']) {
+  const v = createHash('sha256').update(readFileSync(join(dist, f))).digest('hex').slice(0, 8);
+  html = html.replace(`"${f}"`, `"${f}?v=${v}"`);
+}
 writeFileSync(join(dist, 'index.html'), html);
 
 const base = cfg.siteUrl.replace(/\/$/, '');
