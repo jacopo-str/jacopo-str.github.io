@@ -49,6 +49,34 @@
     });
   }
 
+  var imgs = document.querySelectorAll('.shots img');
+  if (imgs.length && typeof HTMLDialogElement === 'function') {
+    var dlg = document.createElement('dialog');
+    dlg.className = 'lightbox';
+    dlg.setAttribute('aria-label', 'Image agrandie');
+    dlg.innerHTML = '<button type="button" class="lb-close" aria-label="Fermer l\'image">×</button><img alt=""><p class="lb-cap"></p>';
+    document.body.appendChild(dlg);
+    var big = dlg.querySelector('img'), cap = dlg.querySelector('.lb-cap');
+    var lastBtn = null;
+    imgs.forEach(function (img) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'zoom';
+      btn.setAttribute('aria-label', 'Agrandir : ' + img.alt);
+      img.parentNode.insertBefore(btn, img);
+      btn.appendChild(img);
+      btn.addEventListener('click', function () {
+        lastBtn = btn;
+        big.src = img.currentSrc || img.src;
+        big.alt = img.alt;
+        cap.textContent = img.alt;
+        dlg.showModal();
+      });
+    });
+    dlg.addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('close', function () { if (lastBtn) lastBtn.focus(); });
+  }
+
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if ('IntersectionObserver' in window && !reduce) {
     root.classList.add('js');
