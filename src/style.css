@@ -190,3 +190,9 @@ figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
 .shot-text .muted{grid-column:1/-1;margin-bottom:0}
 .shots.one{max-width:760px}
 @media (max-width:900px){.shot-text{grid-template-columns:1fr}}
+
+/* captures : centrées et plus compactes */
+.shots{max-width:800px;margin-inline:auto;width:100%}
+.shots.one{max-width:520px}
+.shots figcaption{text-align:center}
+.shots img{margin-inline:auto}
