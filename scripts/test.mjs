@@ -26,6 +26,10 @@ ok(!/https?:\/\/(?!(?:www\.)?w3\.org|schema\.org|jacopo-str\.github\.io|github\.
 ok([...html.matchAll(/<a [^>]*target="_blank"[^>]*>/g)].every((m) => /rel="[^"]*noopener/.test(m[0])), 'liens externes avec noopener');
 ok(!html.includes('mailto:') || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(cfg.email), 'e-mail valide ou absent');
 
+ok(![...html.matchAll(/<(li|p|h[1-6]|a|button)([^>]*)>\s*<\/\1>/g)].some((m) => !/aria-live/.test(m[2])), 'aucun élément vide (hors zone aria-live)');
+ok(!/<h[23][^>]*>[^<]*<\/h[23]>\s*<\/(section|article)>/.test(html), 'aucun titre sans contenu');
+ok([...html.matchAll(/<img [^>]*>/g)].every((m) => /width="\d+"/.test(m[0]) && /height="\d+"/.test(m[0]) && /alt="[^"]{10,}"/.test(m[0])), 'images : dimensions et alt descriptif');
+ok([...html.matchAll(/<section[^>]*id="([^"]+)"/g)].every((m) => new RegExp('href="#' + m[1] + '"').test(html)), 'chaque section est atteignable par un lien');
 // Confidentialité : tous les fichiers de dist
 const files = []; (function walk(d) { for (const f of readdirSync(d)) { const p = join(d, f); statSync(p).isDirectory() ? walk(p) : files.push(p); } })(dist);
 const bad = [/\/home\/\w+/, /\bC:\\Users/, /gh[pous]_[A-Za-z0-9]{20,}/, /github_pat_/, /sk-[A-Za-z0-9]{20,}/, /AKIA[0-9A-Z]{16}/, /BEGIN [A-Z ]*PRIVATE KEY/, /api[_-]?key\s*[:=]/i, /\.env\b/, /ATLAS_NEXT_STEPS|SECURITY_AUDIT/, /Athena|atlas-bmax|tailscale\.net/i];

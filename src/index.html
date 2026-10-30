@@ -50,20 +50,21 @@
     <div>
       <p class="eyebrow">Licence 2 Informatique · Université Côte d'Azur</p>
       <h1>Je construis des outils intelligents,<br><span class="grad">sur un seul portable de 8&nbsp;Go.</span></h1>
-      <p class="lead">Je suis étudiant en informatique, passionné par le développement logiciel et l'intelligence artificielle. Mon projet principal, <strong>ATLAS</strong>, est un assistant personnel qui orchestre mon quotidien d'étudiant. Je le développe, avec mes autres projets, sur un ASUS Vivobook dont les limites commencent à freiner mes expérimentations.</p>
+      <p class="lead">Étudiant en informatique, passionné par le développement logiciel et l'intelligence artificielle, je développe plusieurs projets personnels dont <strong>ATLAS</strong>, un assistant personnel intelligent. Mon ordinateur actuel commence à freiner mes expérimentations : je cherche à monter une tour évolutive.</p>
       <div class="actions">
         <a class="btn primary" href="#projets">Voir mes projets</a>
-        <a class="btn" href="#defi">Mon prochain défi</a>
+        <a class="btn" href="#contact">Me contacter</a>
       </div>
     </div>
-    <aside class="card profile" aria-label="Profil en bref">
-      <h2 class="sr-only">Profil en bref</h2>
-      <dl>
-        <div><dt>Formation</dt><dd>Licence informatique, 2<sup>e</sup> année (L2)</dd></div>
-        <div><dt>Université</dt><dd>Université Côte d'Azur</dd></div>
-        <div><dt>Centres d'intérêt</dt><dd>Développement logiciel, IA, automatisation, outils pour apprendre</dd></div>
-        <div><dt>Machine actuelle</dt><dd>ASUS Vivobook F515EA · i5-1135G7 · 8&nbsp;Go</dd></div>
-      </dl>
+    <aside class="card glance" aria-labelledby="glance-t">
+      <h2 id="glance-t">En 30 secondes</h2>
+      <ol>
+        <li><span>Qui</span> Jacopo, L2 informatique, Université Côte d'Azur.</li>
+        <li><span>Je développe</span> ATLAS (assistant personnel en Python, ≈ 20&nbsp;000 lignes), trois jeux et applications avec captures ci-dessous, d'autres outils.</li>
+        <li><span>Ma limite</span> Un ASUS Vivobook : i5-1135G7, 8&nbsp;Go de RAM, sans carte graphique dédiée. Mon unique machine.</li>
+        <li><span>Aide utile</span> Une tour d'occasion ou des composants (AM5, DDR5, GPU avec beaucoup de VRAM).</li>
+        <li><span>Contact</span> <!--if:email--><a href="mailto:{{email}}">{{email}}</a><!--/if:email--></li>
+      </ol>
     </aside>
   </div>
 </section>
@@ -72,35 +73,41 @@
   <div class="wrap">
     <p class="eyebrow">Réalisations</p>
     <h2>Mes projets</h2>
-    <p class="intro">Tous mes dépôts sont <strong>privés</strong> : les sources ne sont pas publiques et ne sont donc pas consultables en ligne. Si vous êtes intéressé, je peux vous les fournir sur demande. Cette page décrit ce que chaque projet fait réellement aujourd'hui, et ce qui reste à faire.</p>
+    <p class="intro">Tous mes dépôts sont <strong>privés</strong> : les sources ne sont pas publiques et ne sont donc pas consultables en ligne. Si vous êtes intéressé, je peux vous les fournir sur demande. Chaque fiche indique ce qui fonctionne aujourd'hui et ce qui n'est pas fait.</p>
 
     <article class="card featured" id="atlas">
       <div class="featured-head">
         <div>
-          <span class="tag live">Projet principal</span>
+          <span class="tag">Projet principal</span>
           <h3>ATLAS — assistant personnel intelligent</h3>
         </div>
         <span class="status">En développement actif</span>
       </div>
+
       <div class="cols">
         <div>
           <h4>Le problème</h4>
-          <p>Un étudiant jongle entre emploi du temps universitaire, mails, révisions, transports et suivi sportif, dans des outils qui ne communiquent pas. ATLAS les relie dans un agent unique, local d'abord, qui reste sous mon contrôle.</p>
+          <p>Un étudiant jongle entre emploi du temps, mails, révisions, transports et suivi sportif, dans des outils qui ne communiquent pas. ATLAS les relie dans un agent unique, local d'abord, qui reste sous mon contrôle.</p>
           <h4>L'objectif</h4>
           <p>Un cœur fiable et testable, auquel on branche des intégrations une à une, avec des règles explicites sur ce que l'assistant a le droit de faire seul.</p>
           <h4>Technologies</h4>
           <ul class="chips"><li>Python 3.11+</li><li>SQLite</li><li>Démon &amp; tâches planifiées</li><li>API HTTP privée</li><li>pytest · ruff · mypy</li></ul>
+          <ul class="figures" aria-label="ATLAS en chiffres">
+            <li><b>≈ 20&nbsp;600</b><span>lignes de Python</span></li>
+            <li><b>25</b><span>modules</span></li>
+            <li><b>≈ 1&nbsp;500</b><span>tests écrits</span></li>
+          </ul>
         </div>
         <div>
           <h4>Architecture générale</h4>
           <figure class="diagram">
             <svg viewBox="0 0 640 150" role="img" aria-labelledby="atlas-svg-t atlas-svg-d">
               <title id="atlas-svg-t">Pipeline d'exécution d'ATLAS</title>
-              <desc id="atlas-svg-d">Une requête traverse huit étapes : intention, contexte, plan, politique, exécution, audit, puis réponse.</desc>
+              <desc id="atlas-svg-d">Une requête traverse huit étapes : requête, intention, contexte, plan, politique, exécution, audit, puis réponse.</desc>
               <g class="box">
                 <rect x="4" y="50" width="68" height="44" rx="8"/><rect x="84" y="50" width="68" height="44" rx="8"/>
-                <rect x="164" y="50" width="68" height="44" rx="8"/><rect x="244" y="50" width="68" height="44" rx="8" class="hl"/>
-                <rect x="324" y="50" width="68" height="44" rx="8"/><rect x="404" y="50" width="68" height="44" rx="8"/>
+                <rect x="164" y="50" width="68" height="44" rx="8"/><rect x="244" y="50" width="68" height="44" rx="8"/>
+                <rect x="324" y="50" width="68" height="44" rx="8" class="hl"/><rect x="404" y="50" width="68" height="44" rx="8"/>
                 <rect x="484" y="50" width="68" height="44" rx="8"/><rect x="564" y="50" width="72" height="44" rx="8"/>
               </g>
               <g class="lbl" text-anchor="middle">
@@ -109,75 +116,106 @@
                 <text x="518" y="77">Audit</text><text x="600" y="77">Réponse</text>
               </g>
               <g class="arr"><path d="M72 72h12M152 72h12M232 72h12M312 72h12M392 72h12M472 72h12M552 72h12"/></g>
-              <text class="cap" x="358" y="122" text-anchor="middle">Le moteur de politique décide si l'action est autorisée, soumise à validation ou refusée</text>
               <path class="arr" d="M358 98v10"/>
+              <text class="cap" x="358" y="126" text-anchor="middle">Le moteur de politique autorise, soumet à validation ou refuse l'action</text>
             </svg>
-            <figcaption>Schéma simplifié du pipeline central d'ATLAS (illustration réalisée pour ce site).</figcaption>
+            <figcaption>Schéma simplifié du pipeline central (illustration réalisée pour ce site).</figcaption>
+          </figure>
+          <h4>Sortie réelle de la ligne de commande</h4>
+          <figure class="term" role="group" aria-label="Exemple de sortie du moteur de politique d'ATLAS">
+<pre><span class="p">$</span> atlas policy --permission READ --domain general --action-type read
+<span class="ok">ALLOW (AUTONOMOUS)</span>: READ actions are always autonomous.
+<span class="p">$</span> atlas policy --permission SENSITIVE --domain general --action-type send_message
+<span class="no">RESTRICTED</span>: SENSITIVE permission requires explicit human-in-the-loop authorization.</pre>
+            <figcaption>Une lecture est autonome ; une action sensible exige mon autorisation explicite.</figcaption>
           </figure>
         </div>
       </div>
 
       <h4>Fonctionnalités effectivement implémentées</h4>
-      <ul class="ticks">
-        <li><strong>Cœur de contrôle</strong> : pipeline requête → intention → contexte → plan → politique → exécution → audit → réponse, avec journal d'audit.</li>
-        <li><strong>Moteur de politique</strong> : niveaux d'autonomie et permissions ; les actions sensibles ne sont pas exécutées sans validation.</li>
+      <ul class="ticks two-col">
+        <li><strong>Cœur de contrôle</strong> : requête → intention → contexte → plan → politique → exécution → audit → réponse, avec journal d'audit.</li>
+        <li><strong>Moteur de politique</strong> : niveaux d'autonomie ; les actions sensibles ne s'exécutent pas sans validation.</li>
         <li><strong>Moteur de tâches</strong> : reprise après redémarrage, idempotence, tentatives bornées.</li>
-        <li><strong>Calendrier universitaire</strong> : synchronisation de l'emploi du temps (ADE) vers un calendrier personnel, avec règles configurables et priorité des partiels sur les cours.</li>
-        <li><strong>Mails</strong> : lecture Gmail, extraction déterministe d'informations, file de revue pour tout cas ambigu.</li>
-        <li><strong>Transports</strong> : horaires de trains via GTFS rattachés à l'emploi du temps.</li>
-        <li><strong>Sport</strong> : import des entraînements et des données de récupération depuis l'API Suunto.</li>
-        <li><strong>Études</strong> : moteurs qui transforment cours, TD et TP en notes structurées et en fiches de révision.</li>
-        <li><strong>API privée + page mobile</strong>, accessibles uniquement via un réseau privé et avec jeton.</li>
-        <li>Près de <strong>1&nbsp;500 tests automatisés</strong> écrits.</li>
+        <li><strong>Calendrier universitaire</strong> : emploi du temps (ADE) vers un calendrier personnel, règles configurables, priorité des partiels sur les cours.</li>
+        <li><strong>Mails</strong> : lecture Gmail, extraction déterministe, file de revue pour tout cas ambigu.</li>
+        <li><strong>Transports</strong> : horaires de trains (GTFS) rattachés à l'emploi du temps.</li>
+        <li><strong>Sport</strong> : import des entraînements et de la récupération via l'API Suunto.</li>
+        <li><strong>Études</strong> : cours, TD et TP transformés en notes structurées et fiches de révision.</li>
+        <li><strong>API privée et page mobile</strong>, accessibles uniquement via un réseau privé et avec jeton.</li>
       </ul>
 
       <h4>Pas encore réalisé</h4>
-      <p class="muted">Écriture vers Google Agenda (le code existe mais n'est pas activé), commande vocale, et plusieurs adaptateurs d'outils qui ne sont que des squelettes. ATLAS n'a pas d'interface grand public : c'est un outil personnel, pas un produit fini.</p>
+      <p class="muted">Écriture vers Google Agenda (code prêt, non activé), commande vocale, plusieurs adaptateurs d'outils qui ne sont que des squelettes. Brancher un modèle d'IA local est un objectif, pas un acquis. ATLAS n'a pas d'interface grand public : c'est un outil personnel, pas un produit fini.</p>
+    </article>
+
+    <h3 class="sub">Jeux et applications</h3>
+
+    <article class="card shot-card">
+      <div class="shot-text">
+        <div class="proj-top"><h3>Investors</h3><span class="status">Version 0.1 (candidate)</span></div>
+        <p>Jeu 3D de gestion économique, hors ligne : on part de 15&nbsp;000&nbsp;CR, on achète et améliore des entreprises, on investit dans l'immobilier, on emprunte et on spécule sur des marchés simulés, jusqu'à posséder la ville. Aucune transaction réelle.</p>
+        <ul class="ticks small"><li>20 entreprises et 125 améliorations, 14 biens immobiliers, banque, marchés simulés.</li><li>Ville 3D de 38 parcelles, modèles et textures libres de droits.</li><li>Fréquence mesurée sur mon portable : 26 à 49 images/s selon la qualité.</li></ul>
+        <p class="muted"><strong>Limites :</strong> version Windows non testée, sons non écoutés pendant les tests.</p>
+        <ul class="chips"><li>Python</li><li>Ursina / Panda3D</li></ul>
+      </div>
+      <div class="shots">
+        <figure><img src="img/investors-ville.webp" width="1000" height="563" loading="lazy" alt="Investors : vue 3D d'un carrefour de la ville avec interface de gestion et minicarte"><figcaption>La ville</figcaption></figure>
+        <figure><img src="img/investors-finances.webp" width="1000" height="563" loading="lazy" alt="Investors : panneau Finances avec patrimoine net, prévisions journalières et journal comptable"><figcaption>Le panneau Finances</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="card shot-card">
+      <div class="shot-text">
+        <div class="proj-top"><h3>SILLON</h3><span class="status">Prototype jouable</span></div>
+        <p>Jeu 3D natif Linux où l'on programme un drone dans une ferme. Le joueur écrit du vrai OCaml, interroge la partie en SQL et l'analyse en R : ce sont de vrais outils, exécutés dans des processus isolés, hors ligne.</p>
+        <ul class="ticks small"><li>Trois missions, sauvegarde et chargement.</li><li>Suite de tests de bout en bout avec mesure de la mémoire (de l'ordre de 50 à 70&nbsp;Mo relevés sur les captures).</li><li>Précédé d'une version web avec 183 missions d'apprentissage.</li></ul>
+        <p class="muted"><strong>Limites :</strong> Linux uniquement, aucune version Windows.</p>
+        <ul class="chips"><li>Godot 4</li><li>C#</li><li>OCaml</li><li>SQLite · R</li></ul>
+      </div>
+      <div class="shots">
+        <figure><img src="img/sillon-code.webp" width="1000" height="563" loading="lazy" alt="SILLON : un drone récolte du grain pendant que le programme OCaml du joueur s'exécute"><figcaption>Programme OCaml en cours d'exécution</figcaption></figure>
+        <figure><img src="img/sillon-sql.webp" width="1000" height="563" loading="lazy" alt="SILLON : requête SQL listant les parcelles mûres, la sélection s'entoure dans le monde 3D"><figcaption>Requête SQL sur la partie</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="card shot-card">
+      <div class="shot-text">
+        <div class="proj-top"><h3>MealForge</h3><span class="status">MVP</span></div>
+        <p>Application Android gratuite et locale : on fixe ses objectifs nutritionnels, on choisit ses aliments, un solveur embarqué calcule les quantités. Aucun compte, aucune publicité.</p>
+        <ul class="ticks small"><li>Objectifs et macros du jour, quatre repas, recherche et scan de code-barres (Open Food Facts).</li><li>Calcul local, hors ligne ; Gemini optionnel avec sa propre clé gratuite.</li><li>131 tests automatisés ; l'APK se construit.</li></ul>
+        <p class="muted"><strong>Limites :</strong> pas encore validée sur un téléphone réel. Les captures sont rendues hors appareil.</p>
+        <ul class="chips"><li>Kotlin</li><li>Android</li></ul>
+      </div>
+      <div class="shots one">
+        <figure><img src="img/mealforge.webp" width="1500" height="852" loading="lazy" alt="MealForge : écran d'accueil avec anneau de calories, écran d'un repas, et accueil en mode sombre"><figcaption>Accueil, repas, mode sombre</figcaption></figure>
+      </div>
     </article>
 
     <h3 class="sub">Autres projets</h3>
-    <div class="grid">
-
+    <div class="grid two">
       <article class="card proj">
         <div class="proj-top"><h3>CatchMe</h3><span class="status">Conception &amp; prototype</span></div>
-        <p>Jeu multijoueur de poursuite géolocalisée dans le monde réel : un Chasseur contre une Proie, avec objectifs et informations partielles.</p>
-        <p class="muted">Réalisé : spécifications détaillées, prototype d'interface, point de santé d'une API, environnement Docker Compose. <strong>Le jeu n'est pas encore jouable.</strong></p>
+        <p>Jeu multijoueur de poursuite géolocalisée : un Chasseur contre une Proie, avec objectifs et informations partielles.</p>
+        <p class="muted">Réalisé : spécifications détaillées, prototype d'interface, point de santé d'une API, environnement Docker Compose. <strong>Pas encore jouable.</strong></p>
         <ul class="chips"><li>TypeScript</li><li>FastAPI</li><li>Docker</li></ul>
       </article>
-
-      <article class="card proj">
-        <div class="proj-top"><h3>MealForge</h3><span class="status">MVP</span></div>
-        <p>Application Android gratuite et locale : on fixe ses objectifs nutritionnels, on choisit ses aliments, l'application calcule les quantités avec un solveur embarqué.</p>
-        <p class="muted">131 tests automatisés, APK construit. <strong>Pas encore validée sur un téléphone réel.</strong></p>
-        <ul class="chips"><li>Kotlin</li><li>Android</li><li>Open Food Facts</li></ul>
-      </article>
-
       <article class="card proj">
         <div class="proj-top"><h3>Dress-Me</h3><span class="status">En développement</span></div>
-        <p>Styliste personnel sur mobile : garde-robe, météo du jour et contexte servent à proposer une tenue. Les données restent sur le téléphone ; l'IA est optionnelle.</p>
+        <p>Styliste personnel sur mobile : garde-robe, météo du jour et contexte servent à proposer une tenue. Données sur le téléphone ; IA optionnelle.</p>
         <ul class="chips"><li>TypeScript</li><li>Expo / React Native</li></ul>
       </article>
-
-      <article class="card proj">
-        <div class="proj-top"><h3>SILLON</h3><span class="status">Prototype jouable</span></div>
-        <p>Jeu 3D natif Linux où l'on programme un drone dans une ferme. OCaml, SQL et R sont de vrais outils exécutés dans des processus isolés, hors ligne.</p>
-        <p class="muted">Trois missions et une suite de tests de bout en bout avec mesure de mémoire.</p>
-        <ul class="chips"><li>Godot 4</li><li>C#</li><li>OCaml</li><li>SQLite · R</li></ul>
-      </article>
-
       <article class="card proj">
         <div class="proj-top"><h3>gesture-window-control</h3><span class="status">Prototype fonctionnel</span></div>
         <p>Contrôle des fenêtres du bureau Linux (GNOME, Wayland) par gestes de la main, via la webcam.</p>
         <p class="muted">Détection de la main puis classifieur de gestes. Testé sur ma machine uniquement.</p>
         <ul class="chips"><li>Python</li><li>MediaPipe</li><li>OpenCV</li><li>D-Bus</li></ul>
       </article>
-
       <article class="card proj">
         <div class="proj-top"><h3>sql-exercism</h3><span class="status">Fonctionnel</span></div>
         <p>Outil en ligne de commande pour réviser les bases de données : 74 exercices corrigés automatiquement sur un vrai serveur MySQL, avec progression et mode examen blanc.</p>
         <ul class="chips"><li>Python</li><li>MySQL</li><li>Docker</li></ul>
       </article>
-
     </div>
   </div>
 </section>
@@ -186,26 +224,40 @@
   <div class="wrap">
     <p class="eyebrow">Environnement de développement</p>
     <h2>Ma machine actuelle</h2>
+    <p class="intro">Mon ASUS Vivobook F515EA est mon unique ordinateur, pour les études, le développement et tous mes projets. Il me permet de coder, de tester et d'avancer ; il me limite dès que plusieurs outils ou de gros modèles entrent en jeu.</p>
+
     <div class="machine">
       <div class="card spec">
         <h3>ASUS Vivobook F515EA</h3>
         <dl>
-          <div><dt>Processeur</dt><dd>Intel Core i5-1135G7</dd></div>
-          <div><dt>Mémoire vive</dt><dd>8&nbsp;Go</dd></div>
-          <div><dt>Usage</dt><dd>Mon unique ordinateur : études, développement et projets personnels</dd></div>
+          <div><dt>Processeur</dt><dd>Intel Core i5-1135G7 (4 cœurs, 8 threads, portable basse consommation)</dd></div>
+          <div><dt>Mémoire vive</dt><dd>8&nbsp;Go, partagés entre le système, les outils et le processeur graphique</dd></div>
+          <div><dt>Graphique</dt><dd>Intel Iris Xe intégré, sans mémoire vidéo dédiée</dd></div>
+          <div><dt>Usage</dt><dd>Études, développement, projets personnels : rien d'autre</dd></div>
         </dl>
-        <p class="muted">C'est une bonne machine pour étudier et coder. Mais elle atteint ses limites dès que mes projets deviennent ambitieux.</p>
       </div>
-      <div>
-        <h3 class="sub tight">Ce que ça change concrètement</h3>
-        <ul class="limits">
-          <li><h4>IA en local</h4><p>Pas de carte graphique dédiée : l'inférence se fait sur le processeur et la mémoire partagée. Seuls de petits modèles quantifiés sont envisageables, lentement, et sans pouvoir tester des modèles plus grands ou affiner un modèle.</p></li>
-          <li><h4>Expériences gourmandes en RAM</h4><p>Avec 8&nbsp;Go partagés entre le système, le navigateur et les outils, la mémoire est vite saturée. Mes propres audits système relèvent une RAM presque pleine et un swap presque épuisé en usage normal.</p></li>
-          <li><h4>Plusieurs outils en même temps</h4><p>Compiler, lancer des tests, faire tourner Docker, un éditeur et un navigateur simultanément force à tout fermer et rouvrir. Cela ralentit chaque cycle d'essai.</p></li>
-          <li><h4>Environnements exigeants</h4><p>Émulateur Android, moteur de jeu 3D, base de données dans un conteneur : chacun est utilisable seul, difficilement ensemble. Je dois choisir le projet que je fais avancer.</p></li>
-        </ul>
+      <div class="split">
+        <div class="card good">
+          <h3>Ce qui fonctionne</h3>
+          <ul class="ticks small">
+            <li>Écrire, tester et déboguer ATLAS (≈ 1&nbsp;500 tests écrits).</li>
+            <li>Un serveur MySQL en conteneur pour sql-exercism.</li>
+            <li>Godot 4 avec SILLON, environ 50 à 60 images/s sur les captures.</li>
+            <li>Développer des jeux 3D légers (Investors, SILLON).</li>
+          </ul>
+        </div>
+        <div class="card bad">
+          <h3>Ce qui coince</h3>
+          <ul class="limits">
+            <li><h4>IA en local</h4><p>Un modèle de 7 milliards de paramètres quantifié occupe déjà environ 4 à 5&nbsp;Go : presque tout ce qui reste une fois le système et l'éditeur chargés. La génération sur processeur est lente, et les modèles plus grands, l'affinage ou de gros index de recherche sont hors de portée. <em>(Ordres de grandeur généraux, pas mes mesures.)</em></p></li>
+            <li><h4>RAM saturée</h4><p>Avec un navigateur, un éditeur et des conteneurs ouverts, mes propres audits système relèvent une mémoire presque pleine et un swap presque épuisé en usage normal.</p></li>
+            <li><h4>Plusieurs outils à la fois</h4><p>Compiler, lancer les tests, un conteneur Docker, un moteur de jeu et un émulateur Android (plusieurs Go à lui seul) ne cohabitent pas : je ferme, je rouvre, et chaque essai dure plus longtemps.</p></li>
+            <li><h4>Graphique intégré</h4><p>Mon jeu 3D Investors tourne à 26 images/s en qualité haute et 49 en basse, avec le portable déjà chargé. C'est correct pour un prototype, trop juste pour du rendu ou des essais d'IA accélérés par GPU.</p></li>
+          </ul>
+        </div>
       </div>
     </div>
+    <p class="muted fine">Mesures de fréquence d'images : portable chargé par un éditeur et une session de jeu ouverte, donc plutôt pessimistes ; pas de mesure sur 8&nbsp;Go dédiés sans charge.</p>
   </div>
 </section>
 
@@ -213,7 +265,7 @@
   <div class="wrap">
     <p class="eyebrow">Objectif matériel</p>
     <h2>Mon prochain défi : franchir un cap matériel</h2>
-    <p class="intro">Je souhaite monter une <strong>tour évolutive</strong> pour continuer mes études, développer mes projets, expérimenter avec l'IA locale, faire tourner plusieurs environnements de développement en parallèle et, tout simplement, continuer à apprendre.</p>
+    <p class="intro">Je souhaite monter une <strong>tour évolutive</strong> pour continuer mes études, développer mes projets, expérimenter avec l'IA locale, faire tourner plusieurs environnements de développement en parallèle et continuer à apprendre.</p>
 
     <div class="grid two">
       <div class="card">
@@ -225,17 +277,17 @@
           <li><span>Carte graphique</span><b>Beaucoup de VRAM, idéalement 24&nbsp;Go</b></li>
           <li><span>Stockage</span><b>SSD NVMe</b></li>
           <li><span>Alimentation</span><b>De qualité</b></li>
-          <li><span>Esprit</span><b>Évolutive, améliorable avec le temps</b></li>
         </ul>
+        <p class="note">Je suis ouvert au matériel <strong>d'occasion</strong>, aux <strong>composants séparés</strong> et aux <strong>anciennes configurations</strong> : cela serait déjà une aide considérable. Rien ne doit être neuf ni complet.</p>
       </div>
       <div class="card">
-        <h3>Pourquoi ces choix</h3>
+        <h3>Ce que cela changerait concrètement</h3>
         <ul class="why">
-          <li><strong>La VRAM</strong> est ce qui décide quels modèles d'IA on peut faire tourner et étudier en local.</li>
-          <li><strong>AM5 et DDR5</strong> permettent de partir d'une base qui pourra évoluer sans tout racheter.</li>
-          <li><strong>Plus de cœurs et de mémoire</strong> pour lancer compilation, tests, conteneurs et éditeurs en même temps.</li>
+          <li><strong>IA locale</strong> : la VRAM décide des modèles que je peux faire tourner et étudier. C'est un objectif, pas un acquis : ATLAS n'utilise pas encore de modèle local.</li>
+          <li><strong>Plusieurs outils en parallèle</strong> : éditeur, tests, conteneurs, moteur de jeu et émulateur ensemble, sans tout fermer.</li>
+          <li><strong>Base évolutive</strong> : AM5 et DDR5 permettent d'améliorer la machine avec le temps plutôt que de tout racheter.</li>
+          <li><strong>Études et projets</strong> : une machine plus puissante pour les travaux lourds, sans attendre à chaque compilation.</li>
         </ul>
-        <p class="note">Du matériel <strong>d'occasion</strong>, des <strong>composants séparés</strong> ou une <strong>ancienne configuration</strong> seraient déjà une aide considérable. Rien ne doit être neuf ni complet.</p>
       </div>
     </div>
   </div>
@@ -245,7 +297,7 @@
   <div class="wrap narrow">
     <p class="eyebrow">Soutien</p>
     <h2>Si vous pensez pouvoir m'aider</h2>
-    <p>Je ne réclame rien et je comprends que chacun reçoive beaucoup de demandes. Si ce projet vous parle, voici ce qui pourrait m'aider, par ordre de simplicité :</p>
+    <p>Je ne réclame rien et je comprends que chacun reçoive beaucoup de demandes. Si ce projet vous parle, voici ce qui pourrait m'aider :</p>
     <ul class="ticks">
       <li>Une ancienne configuration que vous n'utilisez plus.</li>
       <li>Des composants récupérés lors d'un renouvellement de matériel.</li>
@@ -260,11 +312,11 @@
   <div class="wrap narrow">
     <p class="eyebrow">Contact</p>
     <h2>Échangeons</h2>
-    <p class="intro">Pour un échange, une question sur mes projets ou une proposition de matériel :</p>
+    <p class="intro">Pour une question sur mes projets ou une proposition de matériel :</p>
     <!--if:email-->
     <div class="card mail">
-      <p class="mail-label">Adresse dédiée aux demandes professionnelles</p>
-      <p class="mail-addr"><a href="mailto:{{email}}" id="mail-addr">{{email}}</a></p>
+      <p class="mail-label" id="mail-label">Adresse dédiée aux demandes professionnelles</p>
+      <p class="mail-addr"><a href="mailto:{{email}}" id="mail-addr" aria-labelledby="mail-label mail-addr">{{email}}</a></p>
       <div class="actions">
         <a class="btn primary" href="mailto:{{email}}?subject=Soutien%20mat%C3%A9riel%20%E2%80%94%20portfolio">Envoyer un e-mail</a>
         <button type="button" class="btn" id="copy-mail" data-email="{{email}}">Copier l'adresse</button>
