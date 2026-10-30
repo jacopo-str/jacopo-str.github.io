@@ -22,6 +22,30 @@
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  var copyBtn = document.getElementById('copy-mail');
+  if (copyBtn) {
+    var status = document.getElementById('copy-status');
+    var label = copyBtn.textContent;
+    copyBtn.addEventListener('click', function () {
+      var addr = copyBtn.getAttribute('data-email');
+      function done(ok) {
+        copyBtn.textContent = ok ? 'Adresse copiée ✓' : 'Copie impossible : sélectionnez l\'adresse';
+        status.textContent = copyBtn.textContent;
+        setTimeout(function () { copyBtn.textContent = label; }, 2500);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(addr).then(function () { done(true); }, function () { done(false); });
+      } else {
+        var t = document.createElement('textarea');
+        t.value = addr; t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select();
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(t); done(ok);
+      }
+    });
+  }
+
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if ('IntersectionObserver' in window && !reduce) {
     root.classList.add('js');

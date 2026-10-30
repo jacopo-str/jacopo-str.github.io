@@ -28,4 +28,5 @@ writeFileSync(join(dist, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.w3.org/2001/sitemap/0.9"><url><loc>${base}/</loc></url></urlset>\n`);
 writeFileSync(join(dist, '.nojekyll'), '');
 if (!existsSync(join(dist, 'og.png'))) console.warn('⚠ og.png manquant');
+if (!cfg.email) console.warn('⚠ email vide : section e-mail masquée (site.config.json)');
 console.log('Build OK →', dist);

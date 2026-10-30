@@ -111,6 +111,7 @@ figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
 .why{padding-left:20px}.why li{margin-bottom:10px}
 .note{margin:18px 0 0;padding:14px 16px;background:#0a1d20;border:1px solid rgba(94,234,212,.3);border-radius:12px}
 
+.mail{margin:24px 0}.mail-label{font:600 .75rem/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.mail-addr{font-size:clamp(1.1rem,4vw,1.5rem);font-weight:650;word-break:break-all;margin:0 0 4px}.mail .actions{margin-top:14px}
 .contacts{list-style:none;padding:0;margin:24px 0;display:flex;flex-wrap:wrap;gap:12px}
 .foot{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
 .foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
