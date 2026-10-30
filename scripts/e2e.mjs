@@ -64,6 +64,20 @@ for (const [lg, url, E] of [['EN', '/en/', { burgerClose: 'Close menu', copied: 
     await c.close();
   }
 }
+console.log('— Cartes de projets réellement affichées (défilement réel)');
+const EXPECTED = ['ATLAS', 'Investors', 'SILLON', 'MealForge', 'CatchMe', 'Dress-Me', 'gesture-window-control', 'sql-exercism'];
+for (const [lg, url] of [['FR', '/'], ['EN', '/en/']]) for (const [n, vp, mob] of [['mobile', { width: 375, height: 812 }, true], ['desktop', { width: 1440, height: 900 }, false]]) {
+  const c = await ctx(lg === 'EN' ? 'en-US' : 'fr-FR', { viewport: vp, isMobile: mob, hasTouch: mob }); const p = await page(c); await p.goto(U + url, { waitUntil: 'networkidle' });
+  const H = await p.evaluate(() => document.documentElement.scrollHeight);
+  for (let y = 0; y < H; y += 250) { await p.evaluate((v) => window.scrollTo(0, v), y); await p.waitForTimeout(60); }
+  await p.waitForTimeout(900);
+  const cards = await p.evaluate(() => [...document.querySelectorAll('#projets article.card')].map((a) => { const r = a.getBoundingClientRect(); const cs = getComputedStyle(a); return { name: (a.querySelector('h3') || {}).textContent, w: Math.round(r.width), h: Math.round(r.height), op: cs.opacity, vis: cs.visibility, disp: cs.display, text: a.innerText.length }; }));
+  const names = cards.map((x) => x.name);
+  ok(JSON.stringify(names).includes('ATLAS') && EXPECTED.slice(1).every((e) => names.includes(e)) && cards.length === 8, `${lg} ${n} : 8 cartes présentes (${cards.length})`);
+  ok(cards.every((x) => x.op === '1' && x.vis === 'visible' && x.disp !== 'none' && x.w > 200 && x.h > 120 && x.text > 60), `${lg} ${n} : toutes visibles, opaques et non vides ` + JSON.stringify(cards.filter((x) => !(x.op === '1' && x.w > 200 && x.h > 120 && x.text > 60))));
+  const stuck = await p.evaluate(() => document.querySelectorAll('.reveal:not(.in)').length); ok(stuck === 0, `${lg} ${n} : aucun élément resté masqué (${stuck})`);
+  await c.close();
+}
 console.log('— Fichiers de partage et SEO');
 for (const f of ['og.png', 'og-en.png', 'sitemap.xml', 'robots.txt']) { const r = await fetch(`${U}/${f}`); ok(r.ok, `${f} → ${r.status}`); }
 await b.close(); console.log(bad ? `\n${bad} échec(s)` : '\nTous les tests de navigateur passent'); process.exit(bad ? 1 : 0);

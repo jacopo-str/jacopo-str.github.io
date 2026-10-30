@@ -5,7 +5,7 @@ W, H = 1200, 630
 TEXTS = {
     "og.png": (["Je construis des outils", "intelligents, sur un seul", "portable de 8 Go."],
                "L2 Informatique · Université Côte d'Azur", "ATLAS · IA locale · projets personnels"),
-    "og-en.png": (["I build intelligent tools,", "on an 8 GB", "laptop."],
+    "og-en.png": (["I build intelligent tools", "on an 8 GB", "laptop."],
                   "Second-year CS student · Université Côte d'Azur, France", "ATLAS · local AI · personal projects"),
 }
 
