@@ -1,0 +1,10 @@
+{
+  "name": "jacopo-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node scripts/test.mjs",
+    "serve": "node scripts/build.mjs && python3 -m http.server 4173 -d dist"
+  }
+}

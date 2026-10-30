@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacopo — Étudiant en informatique, développeur de projets IA</title>
+<meta name="description" content="Étudiant en L2 informatique à l'Université Côte d'Azur. Je développe ATLAS, un assistant personnel intelligent, et d'autres projets. Je cherche une tour évolutive pour continuer à apprendre et expérimenter l'IA locale.">
+<meta name="theme-color" content="#070b16">
+<link rel="canonical" href="{{siteUrl}}/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Jacopo — Étudiant en informatique & projets IA">
+<meta property="og:description" content="L2 informatique à l'Université Côte d'Azur. ATLAS, un assistant personnel intelligent, et d'autres projets, développés sur un unique portable de 8 Go de RAM.">
+<meta property="og:url" content="{{siteUrl}}/">
+<meta property="og:image" content="{{siteUrl}}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jacopo — étudiant en informatique, ATLAS et projets IA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jacopo — Étudiant en informatique & projets IA">
+<meta name="twitter:description" content="ATLAS, un assistant personnel intelligent, développé sur un unique portable de 8 Go de RAM.">
+<meta name="twitter:image" content="{{siteUrl}}/og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Jacopo","url":"{{siteUrl}}/","sameAs":["{{github}}"],"affiliation":{"@type":"CollegeOrUniversity","name":"Université Côte d'Azur"},"jobTitle":"Étudiant en licence d'informatique"}
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top" id="top">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="brand" href="#accueil" aria-label="Jacopo — accueil"><span class="dot" aria-hidden="true"></span>Jacopo</a>
+    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><span></span><span></span></button>
+    <ul id="menu" class="menu">
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#machine">Ma machine</a></li>
+      <li><a href="#defi">Prochain défi</a></li>
+      <li><a href="#soutien">Soutien</a></li>
+      <li><a class="cta-small" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenu">
+
+<section class="hero" id="accueil">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Licence 2 Informatique · Université Côte d'Azur</p>
+      <h1>Je construis des outils intelligents,<br><span class="grad">sur un seul portable de 8&nbsp;Go.</span></h1>
+      <p class="lead">Je suis étudiant en informatique, passionné par le développement logiciel et l'intelligence artificielle. Mon projet principal, <strong>ATLAS</strong>, est un assistant personnel qui orchestre mon quotidien d'étudiant. Je le développe, avec mes autres projets, sur un ASUS Vivobook dont les limites commencent à freiner mes expérimentations.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projets">Voir mes projets</a>
+        <a class="btn" href="#defi">Mon prochain défi</a>
+      </div>
+    </div>
+    <aside class="card profile" aria-label="Profil en bref">
+      <h2 class="sr-only">Profil en bref</h2>
+      <dl>
+        <div><dt>Formation</dt><dd>Licence informatique, 2<sup>e</sup> année (L2)</dd></div>
+        <div><dt>Université</dt><dd>Université Côte d'Azur</dd></div>
+        <div><dt>Centres d'intérêt</dt><dd>Développement logiciel, IA, automatisation, outils pour apprendre</dd></div>
+        <div><dt>Machine actuelle</dt><dd>ASUS Vivobook F515EA · i5-1135G7 · 8&nbsp;Go</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="projets" class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Réalisations</p>
+    <h2>Mes projets</h2>
+    <p class="intro">Tous mes dépôts sont <strong>privés</strong> : les sources ne sont pas publiques et ne sont donc pas consultables en ligne. Cette page décrit ce que chaque projet fait réellement aujourd'hui, et ce qui reste à faire.</p>
+
+    <article class="card featured" id="atlas">
+      <div class="featured-head">
+        <div>
+          <span class="tag live">Projet principal</span>
+          <h3>ATLAS — assistant personnel intelligent</h3>
+        </div>
+        <span class="status">En développement actif</span>
+      </div>
+      <div class="cols">
+        <div>
+          <h4>Le problème</h4>
+          <p>Un étudiant jongle entre emploi du temps universitaire, mails, révisions, transports et suivi sportif, dans des outils qui ne communiquent pas. ATLAS les relie dans un agent unique, local d'abord, qui reste sous mon contrôle.</p>
+          <h4>L'objectif</h4>
+          <p>Un cœur fiable et testable, auquel on branche des intégrations une à une, avec des règles explicites sur ce que l'assistant a le droit de faire seul.</p>
+          <h4>Technologies</h4>
+          <ul class="chips"><li>Python 3.11+</li><li>SQLite</li><li>Démon &amp; tâches planifiées</li><li>API HTTP privée</li><li>pytest · ruff · mypy</li></ul>
+        </div>
+        <div>
+          <h4>Architecture générale</h4>
+          <figure class="diagram">
+            <svg viewBox="0 0 640 150" role="img" aria-labelledby="atlas-svg-t atlas-svg-d">
+              <title id="atlas-svg-t">Pipeline d'exécution d'ATLAS</title>
+              <desc id="atlas-svg-d">Une requête traverse huit étapes : intention, contexte, plan, politique, exécution, audit, puis réponse.</desc>
+              <g class="box">
+                <rect x="4" y="50" width="68" height="44" rx="8"/><rect x="84" y="50" width="68" height="44" rx="8"/>
+                <rect x="164" y="50" width="68" height="44" rx="8"/><rect x="244" y="50" width="68" height="44" rx="8" class="hl"/>
+                <rect x="324" y="50" width="68" height="44" rx="8"/><rect x="404" y="50" width="68" height="44" rx="8"/>
+                <rect x="484" y="50" width="68" height="44" rx="8"/><rect x="564" y="50" width="72" height="44" rx="8"/>
+              </g>
+              <g class="lbl" text-anchor="middle">
+                <text x="38" y="77">Requête</text><text x="118" y="77">Intention</text><text x="198" y="77">Contexte</text>
+                <text x="278" y="77">Plan</text><text x="358" y="77">Politique</text><text x="438" y="77">Exécution</text>
+                <text x="518" y="77">Audit</text><text x="600" y="77">Réponse</text>
+              </g>
+              <g class="arr"><path d="M72 72h12M152 72h12M232 72h12M312 72h12M392 72h12M472 72h12M552 72h12"/></g>
+              <text class="cap" x="358" y="122" text-anchor="middle">Le moteur de politique décide si l'action est autorisée, soumise à validation ou refusée</text>
+              <path class="arr" d="M358 98v10"/>
+            </svg>
+            <figcaption>Schéma simplifié du pipeline central d'ATLAS (illustration réalisée pour ce site).</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <h4>Fonctionnalités effectivement implémentées</h4>
+      <ul class="ticks">
+        <li><strong>Cœur de contrôle</strong> : pipeline requête → intention → contexte → plan → politique → exécution → audit → réponse, avec journal d'audit.</li>
+        <li><strong>Moteur de politique</strong> : niveaux d'autonomie et permissions ; les actions sensibles ne sont pas exécutées sans validation.</li>
+        <li><strong>Moteur de tâches</strong> : reprise après redémarrage, idempotence, tentatives bornées.</li>
+        <li><strong>Calendrier universitaire</strong> : synchronisation de l'emploi du temps (ADE) vers un calendrier personnel, avec règles configurables et priorité des partiels sur les cours.</li>
+        <li><strong>Mails</strong> : lecture Gmail, extraction déterministe d'informations, file de revue pour tout cas ambigu.</li>
+        <li><strong>Transports</strong> : horaires de trains via GTFS rattachés à l'emploi du temps.</li>
+        <li><strong>Sport</strong> : import des entraînements et des données de récupération depuis l'API Suunto.</li>
+        <li><strong>Études</strong> : moteurs qui transforment cours, TD et TP en notes structurées et en fiches de révision.</li>
+        <li><strong>API privée + page mobile</strong>, accessibles uniquement via un réseau privé et avec jeton.</li>
+        <li>Près de <strong>1&nbsp;500 tests automatisés</strong> écrits.</li>
+      </ul>
+
+      <h4>Pas encore réalisé</h4>
+      <p class="muted">Écriture vers Google Agenda (le code existe mais n'est pas activé), commande vocale, et plusieurs adaptateurs d'outils qui ne sont que des squelettes. ATLAS n'a pas d'interface grand public : c'est un outil personnel, pas un produit fini.</p>
+    </article>
+
+    <h3 class="sub">Autres projets</h3>
+    <div class="grid">
+
+      <article class="card proj">
+        <div class="proj-top"><h3>CatchMe</h3><span class="status">Conception &amp; prototype</span></div>
+        <p>Jeu multijoueur de poursuite géolocalisée dans le monde réel : un Chasseur contre une Proie, avec objectifs et informations partielles.</p>
+        <p class="muted">Réalisé : spécifications détaillées, prototype d'interface, point de santé d'une API, environnement Docker Compose. <strong>Le jeu n'est pas encore jouable.</strong></p>
+        <ul class="chips"><li>TypeScript</li><li>FastAPI</li><li>Docker</li></ul>
+      </article>
+
+      <article class="card proj">
+        <div class="proj-top"><h3>MealForge</h3><span class="status">MVP</span></div>
+        <p>Application Android gratuite et locale : on fixe ses objectifs nutritionnels, on choisit ses aliments, l'application calcule les quantités avec un solveur embarqué.</p>
+        <p class="muted">131 tests automatisés, APK construit. <strong>Pas encore validée sur un téléphone réel.</strong></p>
+        <ul class="chips"><li>Kotlin</li><li>Android</li><li>Open Food Facts</li></ul>
+      </article>
+
+      <article class="card proj">
+        <div class="proj-top"><h3>Dress-Me</h3><span class="status">En développement</span></div>
+        <p>Styliste personnel sur mobile : garde-robe, météo du jour et contexte servent à proposer une tenue. Les données restent sur le téléphone ; l'IA est optionnelle.</p>
+        <ul class="chips"><li>TypeScript</li><li>Expo / React Native</li></ul>
+      </article>
+
+      <article class="card proj">
+        <div class="proj-top"><h3>SILLON</h3><span class="status">Prototype jouable</span></div>
+        <p>Jeu 3D natif Linux où l'on programme un drone dans une ferme. OCaml, SQL et R sont de vrais outils exécutés dans des processus isolés, hors ligne.</p>
+        <p class="muted">Trois missions et une suite de tests de bout en bout avec mesure de mémoire.</p>
+        <ul class="chips"><li>Godot 4</li><li>C#</li><li>OCaml</li><li>SQLite · R</li></ul>
+      </article>
+
+      <article class="card proj">
+        <div class="proj-top"><h3>gesture-window-control</h3><span class="status">Prototype fonctionnel</span></div>
+        <p>Contrôle des fenêtres du bureau Linux (GNOME, Wayland) par gestes de la main, via la webcam.</p>
+        <p class="muted">Détection de la main puis classifieur de gestes. Testé sur ma machine uniquement.</p>
+        <ul class="chips"><li>Python</li><li>MediaPipe</li><li>OpenCV</li><li>D-Bus</li></ul>
+      </article>
+
+      <article class="card proj">
+        <div class="proj-top"><h3>sql-exercism</h3><span class="status">Fonctionnel</span></div>
+        <p>Outil en ligne de commande pour réviser les bases de données : 74 exercices corrigés automatiquement sur un vrai serveur MySQL, avec progression et mode examen blanc.</p>
+        <ul class="chips"><li>Python</li><li>MySQL</li><li>Docker</li></ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="machine" class="sec alt">
+  <div class="wrap">
+    <p class="eyebrow">Environnement de développement</p>
+    <h2>Ma machine actuelle</h2>
+    <div class="machine">
+      <div class="card spec">
+        <h3>ASUS Vivobook F515EA</h3>
+        <dl>
+          <div><dt>Processeur</dt><dd>Intel Core i5-1135G7</dd></div>
+          <div><dt>Mémoire vive</dt><dd>8&nbsp;Go</dd></div>
+          <div><dt>Usage</dt><dd>Mon unique ordinateur : études, développement et projets personnels</dd></div>
+        </dl>
+        <p class="muted">C'est une bonne machine pour étudier et coder. Mais elle atteint ses limites dès que mes projets deviennent ambitieux.</p>
+      </div>
+      <div>
+        <h3 class="sub tight">Ce que ça change concrètement</h3>
+        <ul class="limits">
+          <li><h4>IA en local</h4><p>Pas de carte graphique dédiée : l'inférence se fait sur le processeur et la mémoire partagée. Seuls de petits modèles quantifiés sont envisageables, lentement, et sans pouvoir tester des modèles plus grands ou affiner un modèle.</p></li>
+          <li><h4>Expériences gourmandes en RAM</h4><p>Avec 8&nbsp;Go partagés entre le système, le navigateur et les outils, la mémoire est vite saturée. Mes propres audits système relèvent une RAM presque pleine et un swap presque épuisé en usage normal.</p></li>
+          <li><h4>Plusieurs outils en même temps</h4><p>Compiler, lancer des tests, faire tourner Docker, un éditeur et un navigateur simultanément force à tout fermer et rouvrir. Cela ralentit chaque cycle d'essai.</p></li>
+          <li><h4>Environnements exigeants</h4><p>Émulateur Android, moteur de jeu 3D, base de données dans un conteneur : chacun est utilisable seul, difficilement ensemble. Je dois choisir le projet que je fais avancer.</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="defi" class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Objectif matériel</p>
+    <h2>Mon prochain défi : franchir un cap matériel</h2>
+    <p class="intro">Je souhaite monter une <strong>tour évolutive</strong> pour continuer mes études, développer mes projets, expérimenter avec l'IA locale, faire tourner plusieurs environnements de développement en parallèle et, tout simplement, continuer à apprendre.</p>
+
+    <div class="grid two">
+      <div class="card">
+        <h3>Configuration cible (indicative)</h3>
+        <ul class="target">
+          <li><span>Plateforme</span><b>AM5</b></li>
+          <li><span>Mémoire</span><b>DDR5</b></li>
+          <li><span>Processeur</span><b>Multicœur</b></li>
+          <li><span>Carte graphique</span><b>Beaucoup de VRAM, idéalement 24&nbsp;Go</b></li>
+          <li><span>Stockage</span><b>SSD NVMe</b></li>
+          <li><span>Alimentation</span><b>De qualité</b></li>
+          <li><span>Esprit</span><b>Évolutive, améliorable avec le temps</b></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Pourquoi ces choix</h3>
+        <ul class="why">
+          <li><strong>La VRAM</strong> est ce qui décide quels modèles d'IA on peut faire tourner et étudier en local.</li>
+          <li><strong>AM5 et DDR5</strong> permettent de partir d'une base qui pourra évoluer sans tout racheter.</li>
+          <li><strong>Plus de cœurs et de mémoire</strong> pour lancer compilation, tests, conteneurs et éditeurs en même temps.</li>
+        </ul>
+        <p class="note">Du matériel <strong>d'occasion</strong>, des <strong>composants séparés</strong> ou une <strong>ancienne configuration</strong> seraient déjà une aide considérable. Rien ne doit être neuf ni complet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="soutien" class="sec alt">
+  <div class="wrap narrow">
+    <p class="eyebrow">Soutien</p>
+    <h2>Si vous pensez pouvoir m'aider</h2>
+    <p>Je ne réclame rien et je comprends que chacun reçoive beaucoup de demandes. Si ce projet vous parle, voici ce qui pourrait m'aider, par ordre de simplicité :</p>
+    <ul class="ticks">
+      <li>Une ancienne configuration que vous n'utilisez plus.</li>
+      <li>Des composants récupérés lors d'un renouvellement de matériel.</li>
+      <li>Du matériel de démonstration ou de test.</li>
+      <li>Une aide matérielle ou financière, quelle qu'en soit la taille.</li>
+    </ul>
+    <p>Aucun partenariat ni soutien n'existe aujourd'hui : ce site est simplement ma façon de montrer ce que je fais et de poser la question honnêtement. Même une simple réponse ou un conseil de configuration m'est précieux.</p>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <div class="wrap narrow">
+    <p class="eyebrow">Contact</p>
+    <h2>Échangeons</h2>
+    <p class="intro">Pour un échange, une question sur mes projets ou une proposition de matériel :</p>
+    <ul class="contacts">
+      <!--if:email--><li><a class="btn primary" href="mailto:{{email}}">Écrire à {{email}}</a></li><!--/if:email-->
+      <li><a class="btn" href="{{github}}" rel="me noopener" target="_blank">GitHub<span class="sr-only"> (nouvel onglet)</span></a></li>
+      <!--if:linkedin--><li><a class="btn" href="{{linkedin}}" rel="me noopener" target="_blank">LinkedIn<span class="sr-only"> (nouvel onglet)</span></a></li><!--/if:linkedin-->
+    </ul>
+    <p class="muted">Mes dépôts de code sont privés.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Jacopo · Étudiant en informatique, Université Côte d'Azur</p>
+    <p><a href="#top">Haut de page ↑</a></p>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
