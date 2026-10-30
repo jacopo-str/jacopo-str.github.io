@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacopo — Computer science student building ATLAS and AI projects</title>
+<meta name="description" content="Second-year computer science student at Université Côte d'Azur (France). I build ATLAS, a personal intelligent assistant, plus games and tools on a single 8 GB laptop. I'm looking for a versatile, upgradeable desktop PC for my studies, local AI and gaming.">
+<meta name="theme-color" content="#070b16">
+<link rel="canonical" href="{{siteUrl}}/en/">
+<link rel="alternate" hreflang="fr" href="{{siteUrl}}/">
+<link rel="alternate" hreflang="en" href="{{siteUrl}}/en/">
+<link rel="alternate" hreflang="x-default" href="{{siteUrl}}/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="Jacopo">
+<meta property="og:title" content="Jacopo — Computer science student &amp; AI projects">
+<meta property="og:description" content="Second-year CS student at Université Côte d'Azur (France). ATLAS, a personal intelligent assistant, plus games and tools, all built on a single 8 GB laptop.">
+<meta property="og:url" content="{{siteUrl}}/en/">
+<meta property="og:image" content="{{siteUrl}}/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jacopo — computer science student, ATLAS and AI projects">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jacopo — Computer science student &amp; AI projects">
+<meta name="twitter:description" content="ATLAS, a personal intelligent assistant, built on a single 8 GB laptop.">
+<meta name="twitter:image" content="{{siteUrl}}/og-en.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Jacopo","url":"{{siteUrl}}/en/","sameAs":["{{github}}"],"affiliation":{"@type":"CollegeOrUniversity","name":"Université Côte d'Azur"},"jobTitle":"Computer science student (second-year undergraduate)","inLanguage":"en"}
+</script>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Skip to content</a>
+
+<header class="top" id="top">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#accueil" aria-label="Jacopo — home"><span class="dot" aria-hidden="true"></span>Jacopo</a>
+    <div class="nav-end">
+      <ul id="menu" class="menu">
+        <li><a href="#projets">Projects</a></li>
+        <li><a href="#machine">My machine</a></li>
+        <li><a href="#defi">Next challenge</a></li>
+        <li><a href="#soutien">Support</a></li>
+        <li><a class="cta-small" href="#contact">Contact</a></li>
+      </ul>
+      <ul class="lang" aria-label="Language">
+        <li><a href="/" lang="fr" hreflang="fr" data-lang="fr" aria-label="Français">FR</a></li>
+        <li><a href="/en/" lang="en" hreflang="en" data-lang="en" aria-label="English" aria-current="true">EN</a></li>
+      </ul>
+      <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main id="contenu">
+
+<section class="hero" id="accueil">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Computer Science, year 2 · Université Côte d'Azur, France</p>
+      <h1>I build intelligent tools,<br><span class="grad">on a single 8&nbsp;GB laptop.</span></h1>
+      <p class="lead">I'm a computer science student, in the second year of a university degree (the French <em>Licence 2</em>) at Université Côte d'Azur, a public university in southern France. I'm passionate about software development and artificial intelligence, and I'm building several personal projects, including <strong>ATLAS</strong>, an intelligent personal assistant. My current computer is starting to hold back my experiments, so I'm looking to build a versatile, upgradeable desktop PC.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projets">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <aside class="card glance" aria-labelledby="glance-t">
+      <h2 id="glance-t">In 30 seconds</h2>
+      <ol>
+        <li><span>Who</span> Jacopo, a second-year computer science student (L2) at Université Côte d'Azur, France.</li>
+        <li><span>What I build</span> ATLAS (a personal assistant in Python, ≈ 20,000 lines), three games and apps with screenshots below, and other tools.</li>
+        <li><span>My limit</span> An ASUS Vivobook: i5-1135G7, 8&nbsp;GB of RAM, integrated Intel Iris Xe graphics. It's my only computer.</li>
+        <li><span>What would help</span> A used or partial PC build, or individual parts (AM5, DDR5, a GPU with plenty of VRAM).</li>
+        <li><span>Contact</span> <!--if:email--><a href="mailto:{{email}}">{{email}}</a><!--/if:email--></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<section id="projets" class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Work</p>
+    <h2>My projects</h2>
+    <p class="intro">All of my repositories are <strong>private</strong>: the source code is not public, so it can't be browsed online. If you're interested, I can share it on request. Each card says what works today and what doesn't.</p>
+
+    <article class="card featured" id="atlas">
+      <div class="featured-head">
+        <div>
+          <span class="tag">Main project</span>
+          <h3>ATLAS — intelligent personal assistant</h3>
+        </div>
+        <span class="status">Under active development</span>
+      </div>
+
+      <div class="cols">
+        <div>
+          <h4>The problem</h4>
+          <p>A student juggles a class schedule, email, coursework, transit and fitness tracking across tools that don't talk to each other. ATLAS connects them in a single agent that runs locally first and stays under my control.</p>
+          <h4>The goal</h4>
+          <p>A reliable, testable core where integrations plug in one at a time, with explicit rules about what the assistant is allowed to do on its own.</p>
+          <h4>Technologies</h4>
+          <ul class="chips"><li>Python 3.11+</li><li>SQLite</li><li>Daemon &amp; scheduled tasks</li><li>Private HTTP API</li><li>pytest · ruff · mypy</li></ul>
+          <ul class="figures" aria-label="ATLAS in numbers">
+            <li><b>≈ 20,600</b><span>lines of Python</span></li>
+            <li><b>25</b><span>modules</span></li>
+            <li><b>≈ 1,500</b><span>tests written</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Overall architecture</h4>
+          <figure class="diagram">
+            <svg viewBox="0 0 640 150" role="img" aria-labelledby="atlas-svg-t atlas-svg-d">
+              <title id="atlas-svg-t">ATLAS execution pipeline</title>
+              <desc id="atlas-svg-d">A request goes through eight stages: request, intent, context, plan, policy, execution, audit, then response.</desc>
+              <g class="box">
+                <rect x="4" y="50" width="68" height="44" rx="8"/><rect x="84" y="50" width="68" height="44" rx="8"/>
+                <rect x="164" y="50" width="68" height="44" rx="8"/><rect x="244" y="50" width="68" height="44" rx="8"/>
+                <rect x="324" y="50" width="68" height="44" rx="8" class="hl"/><rect x="404" y="50" width="68" height="44" rx="8"/>
+                <rect x="484" y="50" width="68" height="44" rx="8"/><rect x="564" y="50" width="72" height="44" rx="8"/>
+              </g>
+              <g class="lbl" text-anchor="middle">
+                <text x="38" y="77">Request</text><text x="118" y="77">Intent</text><text x="198" y="77">Context</text>
+                <text x="278" y="77">Plan</text><text x="358" y="77">Policy</text><text x="438" y="77">Execution</text>
+                <text x="518" y="77">Audit</text><text x="600" y="77">Response</text>
+              </g>
+              <g class="arr"><path d="M72 72h12M152 72h12M232 72h12M312 72h12M392 72h12M472 72h12M552 72h12"/></g>
+              <path class="arr" d="M358 98v10"/>
+              <text class="cap" x="358" y="126" text-anchor="middle">The policy engine allows, requires approval for, or denies the action</text>
+            </svg>
+            <figcaption>Simplified diagram of the core pipeline (illustration made for this site).</figcaption>
+          </figure>
+          <h4>Actual command-line output</h4>
+          <figure class="term" role="group" aria-label="Example output from ATLAS's policy engine">
+<pre><span class="p">$</span> atlas policy --permission READ --domain general --action-type read
+<span class="ok">ALLOW (AUTONOMOUS)</span>: READ actions are always autonomous.
+<span class="p">$</span> atlas policy --permission SENSITIVE --domain general --action-type send_message
+<span class="no">RESTRICTED</span>: SENSITIVE permission requires explicit human-in-the-loop authorization.</pre>
+            <figcaption>Reading data is autonomous; a sensitive action requires my explicit approval.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <h4>Features actually implemented</h4>
+      <ul class="ticks two-col">
+        <li><strong>Control core</strong>: request → intent → context → plan → policy → execution → audit → response, with an audit log.</li>
+        <li><strong>Policy engine</strong>: autonomy levels; sensitive actions don't run without approval.</li>
+        <li><strong>Task engine</strong>: resumes after a restart, idempotent, bounded retries.</li>
+        <li><strong>University calendar</strong>: class schedule (ADE) synced to a personal calendar, configurable rules, exams take priority over classes.</li>
+        <li><strong>Email</strong>: Gmail reading, deterministic extraction, a review queue for anything ambiguous.</li>
+        <li><strong>Transit</strong>: train timetables (GTFS) tied to my schedule.</li>
+        <li><strong>Fitness</strong>: import of workouts and recovery data through the Suunto API.</li>
+        <li><strong>Studies</strong>: lectures, tutorials and labs turned into structured notes and review flashcards.</li>
+        <li><strong>Private API and mobile page</strong>, reachable only over a private network and with a token.</li>
+      </ul>
+
+      <h4>Not done yet</h4>
+      <p class="muted">Writing to Google Calendar (code ready, not enabled), voice commands, and several tool adapters that are only skeletons. Plugging in a local AI model is a goal, not something ATLAS does today. ATLAS has no consumer-facing interface: it's a personal tool, not a finished product.</p>
+    </article>
+
+    <h3 class="sub">Games and apps</h3>
+
+    <article class="card shot-card">
+      <div class="shot-text">
+        <div class="proj-top"><h3>Investors</h3><span class="status">Version 0.1 (release candidate)</span></div>
+        <p>A 3D economic management game that runs offline: you start with 15,000&nbsp;CR, buy and upgrade businesses, invest in real estate, take out loans and trade on simulated markets until you own the whole city. No real transactions.</p>
+        <ul class="ticks small"><li>20 businesses and 125 upgrades, 14 properties, a bank, and simulated markets.</li><li>A 3D city of 38 lots, with CC0-licensed (public domain) models and textures.</li><li>Frame rate measured on my laptop: 26 to 49 frames per second depending on the quality setting.</li></ul>
+        <p class="muted"><strong>Limits:</strong> Windows version untested; sound effects not listened to during testing.</p>
+        <ul class="chips"><li>Python</li><li>Ursina / Panda3D</li></ul>
+      </div>
+      <div class="shots">
+        <figure><img src="../img/investors-ville.webp" width="1000" height="563" loading="lazy" alt="Investors: 3D view of a city intersection with the management interface and a minimap"><figcaption>The city</figcaption></figure>
+        <figure><img src="../img/investors-finances.webp" width="1000" height="563" loading="lazy" alt="Investors: Finances panel showing net worth, daily forecasts and an accounting journal"><figcaption>The Finances panel</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="card shot-card">
+      <div class="shot-text">
+        <div class="proj-top"><h3>SILLON</h3><span class="status">Playable prototype</span></div>
+        <p>A native Linux 3D game where you program a drone on a farm. The player writes real OCaml, queries the game state in SQL and analyzes it in R: these are real tools, run in isolated processes, fully offline.</p>
+        <ul class="ticks small"><li>Three missions, with save and load.</li><li>An end-to-end test suite that measures memory use (roughly 50 to 70&nbsp;MB seen in the screenshots).</li><li>Preceded by a web version with 183 learning missions.</li></ul>
+        <p class="muted"><strong>Limits:</strong> Linux only; there is no Windows version.</p>
+        <ul class="chips"><li>Godot 4</li><li>C#</li><li>OCaml</li><li>SQLite · R</li></ul>
+      </div>
+      <div class="shots">
+        <figure><img src="../img/sillon-code.webp" width="1000" height="563" loading="lazy" alt="SILLON: a drone harvests grain while the player's OCaml program runs"><figcaption>An OCaml program running</figcaption></figure>
+        <figure><img src="../img/sillon-sql.webp" width="1000" height="563" loading="lazy" alt="SILLON: an SQL query listing the ripe plots, with the selection highlighted in the 3D world"><figcaption>An SQL query on the game state</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="card shot-card">
+      <div class="shot-text">
+        <div class="proj-top"><h3>MealForge</h3><span class="status">MVP</span></div>
+        <p>A free, local Android app: you set your nutrition targets, pick your foods, and an embedded solver calculates the quantities. No account, no ads.</p>
+        <ul class="ticks small"><li>Daily targets and macros, four meals, search and barcode scanning (Open Food Facts).</li><li>Local calculation that works offline; optional Gemini with your own free API key.</li><li>131 automated tests; the APK builds.</li></ul>
+        <p class="muted"><strong>Limits:</strong> not yet validated on a real phone. The screenshots were rendered off-device.</p>
+        <ul class="chips"><li>Kotlin</li><li>Android</li></ul>
+      </div>
+      <div class="shots one">
+        <figure><img src="../img/mealforge.webp" width="1500" height="852" loading="lazy" alt="MealForge: home screen with a calorie ring, a meal screen, and the home screen in dark mode"><figcaption>Home, meal, dark mode</figcaption></figure>
+      </div>
+    </article>
+
+    <h3 class="sub">Other projects</h3>
+    <div class="grid two">
+      <article class="card proj">
+        <div class="proj-top"><h3>CatchMe</h3><span class="status">Design &amp; prototype</span></div>
+        <p>A multiplayer chase game based on real-world geolocation: a Hunter against a Prey, with objectives and partial information.</p>
+        <p class="muted">Done: detailed specifications, a UI prototype, an API health endpoint, a Docker Compose environment. <strong>Not playable yet.</strong></p>
+        <ul class="chips"><li>TypeScript</li><li>FastAPI</li><li>Docker</li></ul>
+      </article>
+      <article class="card proj">
+        <div class="proj-top"><h3>Dress-Me</h3><span class="status">In development</span></div>
+        <p>A personal stylist on mobile: your wardrobe, the day's weather and your context are used to suggest an outfit. Data stays on the phone; AI is optional.</p>
+        <ul class="chips"><li>TypeScript</li><li>Expo / React Native</li></ul>
+      </article>
+      <article class="card proj">
+        <div class="proj-top"><h3>gesture-window-control</h3><span class="status">Working prototype</span></div>
+        <p>Controls windows on a Linux desktop (GNOME, Wayland) with hand gestures, through the webcam.</p>
+        <p class="muted">Hand detection followed by a gesture classifier. Tested on my machine only.</p>
+        <ul class="chips"><li>Python</li><li>MediaPipe</li><li>OpenCV</li><li>D-Bus</li></ul>
+      </article>
+      <article class="card proj">
+        <div class="proj-top"><h3>sql-exercism</h3><span class="status">Working</span></div>
+        <p>A command-line tool for practicing databases: 74 exercises graded automatically against a real MySQL server, with progress tracking and a timed mock-exam mode.</p>
+        <ul class="chips"><li>Python</li><li>MySQL</li><li>Docker</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="machine" class="sec alt">
+  <div class="wrap">
+    <p class="eyebrow">Development environment</p>
+    <h2>My current machine</h2>
+    <p class="intro">My ASUS Vivobook F515EA is my only computer, used for my studies, my development and all of my projects. It lets me code, test and keep moving forward; it holds me back as soon as several tools or large models come into play.</p>
+
+    <div class="machine">
+      <div class="card spec">
+        <h3>ASUS Vivobook F515EA</h3>
+        <dl>
+          <div><dt>Processor</dt><dd>Intel Core i5-1135G7 (4 cores, 8 threads, low-power laptop chip)</dd></div>
+          <div><dt>Memory</dt><dd>8&nbsp;GB of RAM, shared between the OS, my tools and the graphics processor</dd></div>
+          <div><dt>Graphics</dt><dd>Integrated Intel Iris Xe, no dedicated video memory</dd></div>
+          <div><dt>Use</dt><dd>Studies, development, personal projects: nothing else</dd></div>
+        </dl>
+      </div>
+      <div class="split">
+        <div class="card good">
+          <h3>What works</h3>
+          <ul class="ticks small">
+            <li>Writing, testing and debugging ATLAS (≈ 1,500 tests written).</li>
+            <li>A MySQL server in a container for sql-exercism.</li>
+            <li>Godot 4 with SILLON, roughly 50 to 60 FPS in the screenshots.</li>
+            <li>Developing lightweight 3D games (Investors, SILLON).</li>
+          </ul>
+        </div>
+        <div class="card bad">
+          <h3>Where it struggles</h3>
+          <ul class="limits">
+            <li><h4>Local AI</h4><p>A 7-billion-parameter model, quantized, already takes about 4 to 5&nbsp;GB: nearly everything left once the OS and editor are loaded. Generation on the CPU is slow, and larger models, fine-tuning or large search indexes are out of reach. <em>(General rules of thumb, not my own measurements.)</em></p></li>
+            <li><h4>Full RAM</h4><p>With a browser, an editor and containers open, my own system audits show memory almost full and swap almost exhausted during normal use.</p></li>
+            <li><h4>Several tools at once</h4><p>Compiling, running tests, a Docker container, a game engine and an Android emulator (several GB on its own) don't coexist: I close and reopen things, and each experiment takes longer.</p></li>
+            <li><h4>Integrated graphics</h4><p>My 3D game Investors runs at 26 FPS on high quality and 49 on low, with the laptop already under load. That's fine for a prototype, too tight for rendering or GPU-accelerated AI experiments.</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="muted fine">Frame-rate measurements: laptop under load from an editor and an open game session, so on the pessimistic side; no measurement with a full 8&nbsp;GB free of other load.</p>
+  </div>
+</section>
+
+<section id="defi" class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Hardware goal</p>
+    <h2>My next challenge: stepping up my hardware</h2>
+    <p class="intro">I'd like to build a <strong>versatile, upgradeable desktop PC</strong>: a single powerful machine for my studies, my development projects, local AI experimentation, and my free time, including gaming.</p>
+
+    <div class="grid two">
+      <div class="card">
+        <h3>Target configuration (indicative)</h3>
+        <ul class="target">
+          <li><span>Platform</span><b>AMD AM5</b></li>
+          <li><span>Memory</span><b>DDR5</b></li>
+          <li><span>Processor</span><b>Multicore CPU</b></li>
+          <li><span>Graphics card</span><b>Dedicated GPU with plenty of VRAM, ideally 24&nbsp;GB</b></li>
+          <li><span>Storage</span><b>NVMe SSD</b></li>
+          <li><span>Power supply</span><b>Good quality</b></li>
+        </ul>
+        <p class="note">I'm open to <strong>used</strong> parts, <strong>individual components</strong> and <strong>older builds</strong>: that would already be a huge help. Nothing has to be new or complete.</p>
+      </div>
+      <div class="card">
+        <h3>One machine, four uses</h3>
+        <ul class="why">
+          <li><strong>Software development and computer science studies</strong>: an editor, tests, containers, a game engine and an emulator running together, without closing everything and without waiting on every compile.</li>
+          <li><strong>Local AI experimentation and model development</strong>: VRAM decides which models I can run and study. This is a goal, not something I do today: ATLAS doesn't use a local model yet.</li>
+          <li><strong>Gaming</strong>: being able to play recent and future games under good conditions. It's a legitimate personal use, one among several: the same graphics card serves both AI and gaming.</li>
+          <li><strong>Long-term upgrades and scalability</strong>: AM5 and DDR5 let me improve the machine over several years instead of replacing it all.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="soutien" class="sec alt">
+  <div class="wrap narrow">
+    <p class="eyebrow">Support</p>
+    <h2>If you think you could help</h2>
+    <p>I'm not asking for anything, and I understand that everyone receives a lot of requests. If this project speaks to you, here is what could help me:</p>
+    <ul class="ticks">
+      <li>An older PC build you no longer use.</li>
+      <li>Parts left over from a hardware upgrade.</li>
+      <li>Demo or test hardware.</li>
+      <li>Hardware or financial help, of any size.</li>
+    </ul>
+    <p>No partnership or support exists today: this site is simply my way of showing what I do and asking the question honestly. Even a short reply or some advice on a build would mean a lot to me. Thank you for taking the time to read this.</p>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <div class="wrap narrow">
+    <p class="eyebrow">Contact</p>
+    <h2>Let's talk</h2>
+    <p class="intro">For a question about my projects or an offer of hardware:</p>
+    <!--if:email-->
+    <div class="card mail">
+      <p class="mail-label" id="mail-label">Address for professional inquiries</p>
+      <p class="mail-addr"><a href="mailto:{{email}}" id="mail-addr" aria-labelledby="mail-label mail-addr">{{email}}</a></p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:{{email}}?subject=Hardware%20support%20%E2%80%94%20portfolio">Send an email</a>
+        <button type="button" class="btn" id="copy-mail" data-email="{{email}}">Copy address</button>
+      </div>
+      <p class="sr-only" role="status" aria-live="polite" id="copy-status"></p>
+    </div>
+    <!--/if:email-->
+    <ul class="contacts">
+      <li><a class="btn" href="{{github}}" rel="me noopener" target="_blank">Public GitHub<span class="sr-only"> (opens in a new tab)</span></a></li>
+      <li><a class="btn" href="{{siteUrl}}/en/">Portfolio: {{siteUrl}}</a></li>
+      <!--if:linkedin--><li><a class="btn" href="{{linkedin}}" rel="me noopener" target="_blank">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li><!--/if:linkedin-->
+    </ul>
+    <p class="muted">My code repositories are private; if you're interested, I can share them on request.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Jacopo · Computer science student, Université Côte d'Azur</p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </div>
+</footer>
+
+<script src="../main.js" defer></script>
+</body>
+</html>

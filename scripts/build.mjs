@@ -14,25 +14,31 @@ cpSync(join(root, 'src'), dist, { recursive: true });
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
-let html = readFileSync(join(dist, 'index.html'), 'utf8');
-// Blocs optionnels : supprimés si la valeur de configuration est vide.
-html = html.replace(/<!--if:(\w+)-->([\s\S]*?)<!--\/if:\1-->/g, (_, k, body) => (cfg[k] ? body : ''));
-html = html.replace(/\{\{(\w+)\}\}/g, (_, k) => {
-  if (!(k in cfg)) throw new Error(`Variable de configuration inconnue : ${k}`);
-  return esc(cfg[k]);
-});
-// Versionne CSS/JS par empreinte du contenu : un changement est visible immédiatement malgré le cache.
-for (const f of ['style.css', 'main.js']) {
-  const v = createHash('sha256').update(readFileSync(join(dist, f))).digest('hex').slice(0, 8);
-  html = html.replace(`"${f}"`, `"${f}?v=${v}"`);
+function render(file) {
+  let html = readFileSync(join(dist, file), 'utf8');
+  // Blocs optionnels : supprimés si la valeur de configuration est vide.
+  html = html.replace(/<!--if:(\w+)-->([\s\S]*?)<!--\/if:\1-->/g, (_, k, body) => (cfg[k] ? body : ''));
+  html = html.replace(/\{\{(\w+)\}\}/g, (_, k) => {
+    if (!(k in cfg)) throw new Error(`Variable de configuration inconnue : ${k}`);
+    return esc(cfg[k]);
+  });
+  // Versionne CSS/JS par empreinte du contenu : un changement est visible immédiatement malgré le cache.
+  const prefix = file.includes('/') ? '../' : '';
+  for (const f of ['style.css', 'main.js']) {
+    const v = createHash('sha256').update(readFileSync(join(dist, f))).digest('hex').slice(0, 8);
+    html = html.replace(`"${prefix}${f}"`, `"${prefix}${f}?v=${v}"`);
+  }
+  writeFileSync(join(dist, file), html);
 }
-writeFileSync(join(dist, 'index.html'), html);
+render('index.html');
+render('en/index.html');
 
 const base = cfg.siteUrl.replace(/\/$/, '');
 writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${base}/sitemap.xml\n`);
+const alt = (u) => `<xhtml:link rel="alternate" hreflang="fr" href="${base}/"/><xhtml:link rel="alternate" hreflang="en" href="${base}/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="${base}/"/>`;
 writeFileSync(join(dist, 'sitemap.xml'),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.w3.org/2001/sitemap/0.9"><url><loc>${base}/</loc></url></urlset>\n`);
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n<url><loc>${base}/</loc>${alt()}</url>\n<url><loc>${base}/en/</loc>${alt()}</url>\n</urlset>\n`);
 writeFileSync(join(dist, '.nojekyll'), '');
-if (!existsSync(join(dist, 'og.png'))) console.warn('⚠ og.png manquant');
+for (const f of ['og.png', 'og-en.png']) if (!existsSync(join(dist, f))) console.warn(`⚠ ${f} manquant`);
 if (!cfg.email) console.warn('⚠ email vide : section e-mail masquée (site.config.json)');
 console.log('Build OK →', dist);

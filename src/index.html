@@ -6,10 +6,19 @@
 <title>Jacopo — Étudiant en informatique, développeur de projets IA</title>
 <meta name="description" content="Étudiant en L2 informatique à l'Université Côte d'Azur. Je développe ATLAS, un assistant personnel intelligent, et d'autres projets. Je cherche une tour polyvalente et évolutive pour mes études, l'IA locale et mes loisirs.">
 <meta name="theme-color" content="#070b16">
+<script>
+/* Première visite sur la racine : anglais pour les navigateurs non francophones, sauf choix manuel déjà enregistré. */
+(function(){try{var p=location.pathname;if(p!=='/'&&p!=='/index.html')return;var s=localStorage.getItem('lang');var l=(navigator.languages&&navigator.languages[0])||navigator.language||'fr';if(s==='en'||(!s&&!/^fr/i.test(l)))location.replace('/en/'+location.hash);}catch(e){}})();
+</script>
 <link rel="canonical" href="{{siteUrl}}/">
+<link rel="alternate" hreflang="fr" href="{{siteUrl}}/">
+<link rel="alternate" hreflang="en" href="{{siteUrl}}/en/">
+<link rel="alternate" hreflang="x-default" href="{{siteUrl}}/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Jacopo">
 <meta property="og:title" content="Jacopo — Étudiant en informatique & projets IA">
 <meta property="og:description" content="L2 informatique à l'Université Côte d'Azur. ATLAS, un assistant personnel intelligent, et d'autres projets, développés sur un unique portable de 8 Go de RAM.">
 <meta property="og:url" content="{{siteUrl}}/">
@@ -22,7 +31,7 @@
 <meta name="twitter:description" content="ATLAS, un assistant personnel intelligent, développé sur un unique portable de 8 Go de RAM.">
 <meta name="twitter:image" content="{{siteUrl}}/og.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Jacopo","url":"{{siteUrl}}/","sameAs":["{{github}}"],"affiliation":{"@type":"CollegeOrUniversity","name":"Université Côte d'Azur"},"jobTitle":"Étudiant en licence d'informatique"}
+{"@context":"https://schema.org","@type":"Person","name":"Jacopo","url":"{{siteUrl}}/","sameAs":["{{github}}"],"affiliation":{"@type":"CollegeOrUniversity","name":"Université Côte d'Azur"},"jobTitle":"Étudiant en licence d'informatique","inLanguage":"fr"}
 </script>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -32,14 +41,20 @@
 <header class="top" id="top">
   <nav class="nav" aria-label="Navigation principale">
     <a class="brand" href="#accueil" aria-label="Jacopo — accueil"><span class="dot" aria-hidden="true"></span>Jacopo</a>
-    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><span></span><span></span></button>
-    <ul id="menu" class="menu">
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#machine">Ma machine</a></li>
-      <li><a href="#defi">Prochain défi</a></li>
-      <li><a href="#soutien">Soutien</a></li>
-      <li><a class="cta-small" href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-end">
+      <ul id="menu" class="menu">
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#machine">Ma machine</a></li>
+        <li><a href="#defi">Prochain défi</a></li>
+        <li><a href="#soutien">Soutien</a></li>
+        <li><a class="cta-small" href="#contact">Contact</a></li>
+      </ul>
+      <ul class="lang" aria-label="Langue">
+        <li><a href="/" lang="fr" hreflang="fr" data-lang="fr" aria-label="Français" aria-current="true">FR</a></li>
+        <li><a href="/en/" lang="en" hreflang="en" data-lang="en" aria-label="English">EN</a></li>
+      </ul>
+      <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><span></span><span></span></button>
+    </div>
   </nav>
 </header>
 
@@ -284,7 +299,7 @@
         <h3>Une seule machine, quatre usages</h3>
         <ul class="why">
           <li><strong>Études et développement</strong> : éditeur, tests, conteneurs, moteur de jeu et émulateur ensemble, sans tout fermer, et sans attendre à chaque compilation.</li>
-          <li><strong>IA locale</strong> : la VRAM décide des modèles que je peux faire tourner et étudier. C'est un objectif, pas un acquis : ATLAS n'utilise pas encore de modèle local.</li>
+          <li><strong>IA locale</strong> : expérimenter et développer des modèles ; la VRAM décide de ceux que je peux faire tourner et étudier. C'est un objectif, pas un acquis : ATLAS n'utilise pas encore de modèle local.</li>
           <li><strong>Jeu vidéo</strong> : pouvoir jouer dans de bonnes conditions, aux jeux récents puis futurs. C'est un usage assumé, un parmi les autres : la même carte graphique sert à l'IA et au jeu.</li>
           <li><strong>Évolutivité</strong> : AM5 et DDR5 permettent d'améliorer la machine pendant plusieurs années plutôt que de tout racheter.</li>
         </ul>
